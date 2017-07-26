@@ -1,5 +1,5 @@
 """
-WSGI config for IFB299SmartCity project.
+WSGI config for IFB299ToDoBrisbane project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
