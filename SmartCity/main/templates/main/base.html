@@ -1,0 +1,16 @@
+<p>
+    <a href="{% url 'main:index' %}">Main</a>
+
+    {% if user.is_authenticated %}
+        Hello, {{ user.username }}
+        <a href="{% url 'users:logout' %}">Sign Out</a>
+    {% else %}
+        <a href = "{% url 'users:register' %}">Register</a>
+        <a href="{% url 'users:login' %}">Sign In</a>
+    {% endif %}
+</p>
+
+
+{% block content %}
+
+{% endblock content%}
