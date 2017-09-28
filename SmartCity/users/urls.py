@@ -12,4 +12,15 @@ url(r'^logout/$', views.logout_view, name='logout'),
 
 # Register page
 url(r'^register/$', views.register, name='register'),
-]
+
+
+# Business page
+url(r'^business/$', views.business_view, name='business'),
+
+# Student page
+url(r'^student/$', views.student_view, name='student'),
+
+# Tourist page
+url(r'^tourist/$', views.tourist_view, name = 'tourist'),
+
+ ]
