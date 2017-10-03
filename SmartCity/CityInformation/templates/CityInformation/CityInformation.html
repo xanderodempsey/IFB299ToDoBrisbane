@@ -1,0 +1,54 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<p>
+  <h2>PARKS</h2>
+    {% for park in parks %}
+    <h3>{{park.name|safe|linebreaks}}</h3>
+    <h6>Address: {{park.address|safe|linebreaks}}</h6>
+    <h6>Phone: {{park.phone|safe|linebreaks}}</h6>
+    <h6>Email Address: {{park.emailAddress|safe|linebreaks}}</h6>
+    {% endfor %}
+</p>
+
+<p>
+  <h2>ZOOS</h2>
+    {% for zoo in zoos %}
+    <h3>{{zoo.name|safe|linebreaks}}</h3>
+    <h6>Address: {{zoo.address|safe|linebreaks}}</h6>
+    <h6>Phone: {{zoo.phone|safe|linebreaks}}</h6>
+    <h6>Email Address: {{zoo.emailAddress|safe|linebreaks}}</h6>
+    {% endfor %}
+</p>
+
+<p>
+  <h2>MUSEUMS</h2>
+    {% for museum in museums %}
+    <h3>{{museum.name|safe|linebreaks}}</h3>
+    <h6>Address: {{museum.address|safe|linebreaks}}</h6>
+    <h6>Phone: {{museum.phone|safe|linebreaks}}</h6>
+    <h6>Email Address: {{museum.emailAddress|safe|linebreaks}}</h6>
+    {% endfor %}
+</p>
+
+<p>
+  <h2>RESTAURANTS</h2>
+    {% for restaurant in restaurants %}
+    <h3>{{restaurant.name|safe|linebreaks}}</h3>
+    <h6>Address: {{restaurant.address|safe|linebreaks}}</h6>
+    <h6>Phone: {{restaurant.phone|safe|linebreaks}}</h6>
+    <h6>Email Address: {{restaurant.emailAddress|safe|linebreaks}}</h6>
+    {% endfor %}
+</p>
+
+<p>
+  <h2>MALLS</h2>
+    {% for mall in malls %}
+    <h3>{{mall.name|safe|linebreaks}}</h3>
+    <h6>Address: {{mall.address|safe|linebreaks}}</h6>
+    <h6>Phone: {{mall.phone|safe|linebreaks}}</h6>
+    <h6>Email Address: {{mall.emailAddress|safe|linebreaks}}</h6>
+    {% endfor %}
+</p>
+
+{% endblock content %}

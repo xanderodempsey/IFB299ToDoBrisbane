@@ -1,0 +1,10 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+
+  <h3>{{park.name|safe|linebreaks}}</h3>
+  <h6>Address: {{park.address|safe|linebreaks}}</h6>
+  <h6>Phone: {{park.phone|safe|linebreaks}}</h6>
+  <h6>Address: {{park.emailAddress|safe|linebreaks}}</h6>
+
+{% endblock content %}
