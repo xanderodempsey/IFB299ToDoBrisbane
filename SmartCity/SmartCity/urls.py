@@ -19,11 +19,16 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('main.urls', namespace='main')),
     url(r'^users/', include('users.urls', namespace='users')),
-
+    url(r'^CityInformation/', include('CityInformation.urls', namespace='CityInformation')),
 
 ]
+
+# Change admin site title
+admin.site.site_header = _("SmartCity Administration")
+admin.site.site_title = _("SmartCity Admin")
