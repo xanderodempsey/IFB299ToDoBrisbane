@@ -41,7 +41,6 @@
 
             <br>
 
-
             <p>
                 {% if user.is_authenticated %}
                     Hello, {{ user.username }}
@@ -81,17 +80,11 @@
 
 
 
-
-
-
-
                 {% endif %}
                 </p>
 
 
-                <!-- Great, til you resize. -->
                 <!--<div class="well bs-sidebar affix" id="sidebar" style="background-color:#fff">-->
-
                 {% block content %}
                 {% endblock %}
                 </div>
@@ -100,6 +93,7 @@
     </div>
     <footer>
         <div class="container-fluid" style='margin-left:15px'>
+            <!-- Links to business, student and tourist pages  -->
             <p><a href="/users/business/" target="blank">Business</a> | <a href="/users/student/" target="blank">Student</a> | <a href="/users/tourist/"
                                                                                                      target="blank">Tourist</a>
             </p>
