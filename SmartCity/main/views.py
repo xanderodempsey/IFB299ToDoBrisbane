@@ -6,3 +6,6 @@ def index(request):
     '''The home page for main'''
     return render(request, 'main/index.html')
 
+def contact(request):
+    '''The contact page'''
+    return render(request, 'main/contact.html')
