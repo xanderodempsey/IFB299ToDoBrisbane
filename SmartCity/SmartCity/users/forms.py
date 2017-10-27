@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.forms import ModelChoiceField
 from django.contrib.auth.models import User, Group
 from .models import UserProfile
@@ -37,3 +37,8 @@ class RegisterForm(UserCreationForm):
         fields = ('username', 'first_name', 'last_name', 'email', 'user_type', 'password1', 'password2',)
 
 
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('user_type',)

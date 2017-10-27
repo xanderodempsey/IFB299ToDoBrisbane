@@ -136,4 +136,4 @@ STATIC_URL = '/static/'
 
 ACCOUNT_SIGNUP_FORM_CLASS = 'SmartCity.forms.RegisterForm'
 
-
+LOGIN_REDIRECT_URL = 'main/faq.html'

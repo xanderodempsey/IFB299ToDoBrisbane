@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RegisterForm
+from .forms import RegisterForm, ProfileForm
 
 from django.contrib.auth.models import User
 from django.views.generic import UpdateView
@@ -13,6 +13,18 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import Group, User
 from django.http import HttpResponse
 from django.template import loader
+from .models import *
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -69,12 +81,6 @@ def register(request):
 
 
 
-
-
-     #       profile = form.save(commit=False)
-     #       profile.user = request.user
-     #       profile.save()
-
             user = form.save()
             profile = user.userprofile
             user_group = form.cleaned_data.get('user_type')
@@ -90,11 +96,15 @@ def register(request):
             login(request, user)
 
             if user_group == '1':
-                return render(request, 'users/business.html')
+                return HttpResponseRedirect(reverse('users:business'))
+
             elif user_group == '2':
-                return render(request, 'users/student.html')
+        #        return redirect('student')
+                return HttpResponseRedirect(reverse('users:student'))
+
             elif user_group == '3':
-                return render(request, 'users/tourist.html')
+               # return redirect('tourist')
+                return HttpResponseRedirect(reverse('users:tourist'))
             else:
                 return redirect('main:index')
         else:
@@ -133,36 +143,32 @@ def register(request):
 
 def log_in(request):
     if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
+        form = AuthenticationForm(data=request.POST)
 
-            user_group = form.cleaned_data.get('user_type')
-            user = authenticate(username=username, password=password)
-       #     user_group = request.user.userprofile.user_type
+        if form.is_valid():
+            user = form.user_cache
+            profile = user.userprofile
+            user_group = profile.user_type
+
+
+
+            form.clean()
+            login(request, form.user_cache)
+
 
 
             if user_group == '1':
-                return redirect(request, 'users/business.html')
+                return HttpResponseRedirect(reverse('users:business'))
             elif user_group == '2':
-                return redirect(request, 'users/student.html')
+                return HttpResponseRedirect(reverse('users:student'))
             elif user_group == '3':
-                return redirect(request, 'users/tourist.html')
-        else:
-            return redirect('main:index')
-           # else:
-           #     return redirect('main:index')
+                return HttpResponseRedirect(reverse('users:tourist'))
+            else:
+                return redirect('main:contact')
     else:
-        form = AuthenticationForm(request)
-    return render(request, 'users/login.html', {'form': form})
+        form = AuthenticationForm()
 
-
-
-
-
-
-
+    return render(request, 'users/login.html', {'form' : form})
 
 
 
