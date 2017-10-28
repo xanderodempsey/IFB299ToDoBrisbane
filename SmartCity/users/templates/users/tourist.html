@@ -304,6 +304,37 @@
 	</table>
 </div></div></div>
 
+<div class="wsite-section-wrap">
+	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-14" style="height: auto;background-color: transparent;background-image: none;is_customized: ;" >
+		<div class="wsite-section-content">
+          <div class="container">
+			<div class="wsite-section-elements">
+				<h2 class="wsite-content-title" style="text-align:center;"><font size="6">Hotels</font></h2>
+                <a><center><img src="{% static 'img/hotel.jpg' %}" alt="Picture" align="middle" style="width:auto;max-width:100%" /></center></a>
+<div class="wsite-spacer" style="height:10px;"></div>
+<div class="wsite-spacer" style="height:50px;"></div>
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:33.132530120482%; padding:0 15px;">
+                    {% for hotel in hotels %}
+                    <h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">{{hotel.name}}</font></strong></h2>
+                    <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+                    <div style="display:block;font-size:90%"></div>
+                    </div></div>
+                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Address: {{hotel.address|safe|linebreaks}}</strong></font></div>
+                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Phone: {{hotel.phone|safe|linebreaks}}</strong></font></div>
+                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Email Address: {{hotel.emailAddress|safe|linebreaks}}</strong></font></div>
+
+                                    </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
+                    {% endfor %}
+
+                </td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
 <div class="wsite-spacer" style="height:31px;"></div>
 			</div>
 		</div>
