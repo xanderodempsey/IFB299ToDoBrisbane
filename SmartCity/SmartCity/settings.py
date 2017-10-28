@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     # My apps
     'main',
     'users',
+
 ]
+
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,6 +56,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'SmartCity.urls'
@@ -81,11 +86,14 @@ WSGI_APPLICATION = 'SmartCity.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'SmartCity',
+        'USER': 'root',
+        'PASSWORD': 'secret',
+        'HOST': 'localhost',
+        'PORT': '3306',
+   }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -125,4 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 ACCOUNT_SIGNUP_FORM_CLASS = 'SmartCity.forms.RegisterForm'
+
+LOGIN_REDIRECT_URL = 'main/faq.html'

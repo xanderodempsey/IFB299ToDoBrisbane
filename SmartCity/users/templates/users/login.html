@@ -1,17 +1,52 @@
-{% extends "main/base.html" %}
-{% block content %}
 
-{% if form.errors %}
- <p>Your username and password didn't match. Please try again.</p>
- {% endif %}
 
- <form method="post" action="{% url 'users:login' %}">
- {% csrf_token %}
-{{ form.as_p }}
 
-<button name="submit">log in</button>
-User Accounts 441
-<input type="hidden" name="next" value="{% url 'main:index' %}" />
- </form>
+<!doctype html>
+{% load staticfiles %}
+<html>
 
-{% endblock content %}
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Smart City Project Login</title>
+	</head>
+	<body>
+		<div class="loginBox">
+			<!--<img src="images/user.png" class="user" height="100px" width="100px">-->
+			<h2>Log In Here</h2>
+		<!--	<form>
+				<p>Email</p>
+				<input type="text" name="" placeholder="Enter Email">
+				<p>Password</p>
+				<input type="Password" name="" placeholder="••••••">
+				<input type="submit" name="" value="Sign In">
+				<center><a href="home.html">Home Page |</a>
+				<a href="sign-up.html">Sign-up Page</a></center>
+			</form>-->
+
+
+
+
+            {% if form.errors %}
+                 <p>Your username and password didn't match. Please try again.</p>
+                 {% endif %}
+
+                 <form method="post" action="{% url 'users:login' %}">
+                 {% csrf_token %}
+                {{ form.as_p }}
+
+                <input type="submit" name="" value="Sign In">
+				<center><a href="{% url 'main:index' %}">Home Page |</a>
+
+
+
+                <input type = 'hidden' name = 'next' value="{% url 'main:faq' %}" />
+
+
+
+		</div>
+	</body>
+</html>

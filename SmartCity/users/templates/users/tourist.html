@@ -1,8 +1,318 @@
-{% extends 'main/base.html' %}
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
 
-{% block content %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/sites.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fancybox.css' %}">
+    <link rel="stylesheet" href="{% static 'css/social-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main_style.css' %}">
 
-    <p>Tourist page text, Smart City.</p>
 
-{% endblock content %}
+	<head>
+		<title>Tourist Page - SMART CITY</title><meta property="og:site_name" content="SMART CITY" />
+<meta property="og:title" content="Tourist Page" />
+<meta property="og:description" content=" Top Places rated by Visitors !" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+<style type='text/css'>
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {color:#d5d5d5 !important;letter-spacing: 5px !important;}
+.wsite-menu-default a {text-transform:  uppercase !important;letter-spacing: 2px !important;}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {font-family:"Montserrat" !important;}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {text-transform:  none !important;letter-spacing: 0px !important;}
+.wsite-button-inner {text-transform:  none !important;}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+.wsite-button-large .wsite-button-inner {font-size:13px !important;}
+@media screen and (min-width: 767px) {.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+#wsite-title {font-size:20px !important;}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {font-size:48px !important;}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {font-size:14px !important;line-height:10px !important;}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+}</style>
+	</head>
+	<body class="header-page  wsite-page-tourist-page  full-width-body-off header-overlay-on alt-nav-off  wsite-theme-light"><div class="wrapper">
+    <div class="birdseye-header">
+      <div class="nav-wrap">
+        <div class="container">
+          <div class="logo"><span class="wsite-logo">
+	<a href="/">
+	<span id="wsite-title">SMART CITY</span></a>
+</span></div>
+
+
+         {% if user.is_authenticated %}
+
+
+
+                  <div class="nav desktop-nav"><ul class="wsite-menu-default">
+                    <li id="active" class="wsite-menu-item-wrap">
+                        <a href="{% url 'main:index' %}" class="wsite-menu-item">Home</a>
+                    </li>
+                    <li id="pg595672417440186405" class="wsite-menu-item-wrap">
+                        <a href="/contact/" class="wsite-menu-item">Contact</a>
+
+                    <li id="pg831912100138126710" class="wsite-menu-item-wrap">
+                            <a href="/faq/" class="wsite-menu-item">FAQ</a>
+                    </li>
+
+                    </li>
+                    <li id="pg831912100138126710" class="wsite-menu-item-wrap">
+                            <a href="/users/logout/" class="wsite-menu-item">Log Out</a>
+                    </li>
+                    <li id="pg828524256407165843" class="wsite-menu-item-wrap">
+                    <a href="/CityInformation/" class="wsite-menu-item">City Information</a>
+                    </li>
+            </ul>
+            </div>
+
+
+
+
+             {% else %}
+
+                        <div class="nav desktop-nav"><ul class="wsite-menu-default">
+                    <li id="active" class="wsite-menu-item-wrap">
+                        <a href="{% url 'main:index' %}" class="wsite-menu-item">Home</a>
+                    </li>
+                    <li id="pg595672417440186405" class="wsite-menu-item-wrap">
+                        <a href="/contact/" class="wsite-menu-item">Contact</a>
+
+                    <li id="pg831912100138126710" class="wsite-menu-item-wrap">
+                            <a href="/faq/" class="wsite-menu-item">FAQ</a>
+                    </li>
+
+                    </li>
+                    <li id="pg831912100138126710" class="wsite-menu-item-wrap">
+                            <a href="/users/login/" class="wsite-menu-item">Log In</a>
+                    </li>
+
+
+                    <li id="pg831912100138126710" class="wsite-menu-item-wrap">
+                            <a href="{% url 'admin:index' %}" class="wsite-menu-item">Admin</a>
+                    </li>
+
+                    <li id="pg828524256407165843" class="wsite-menu-item-wrap">
+                        <a href="/users/register/" class="wsite-menu-item">Sign Up</a>
+
+                    </li>
+            </ul>
+            </div>
+
+                {% endif %}
+
+
+
+
+          <label class="hamburger"><span></span></label>
+        </div>
+      </div>
+    </div>
+    <div class="banner-wrap">
+      <div class="wsite-elements wsite-not-footer wsite-header-elements">
+	<div class="wsite-section-wrap">
+	<div  class="wsite-section wsite-header-section wsite-section-bg-image wsite-section-effect-reveal" style="height: 660px;background-image: url({% static 'img/City-Chicago.jpg' %}) ;background-repeat: no-repeat ;background-position: undefined undefined ;background-size: 100% ;background-color: transparent ;background-size: cover;" >
+		<div class="wsite-section-content">
+          <div class="container">
+            <div class="banner">
+				<div class="wsite-section-elements">
+					<h2 class="wsite-content-title" style="text-align:center;">Brisbane Visitor Guide</h2>
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:96.441947565543%; padding:0 15px;">
+<div class="wsite-spacer" style="height:19px;"></div>
+				</td>				<td class="wsite-multicol-col" style="width:3.5580524344569%; padding:0 15px;">
+<div class="wsite-spacer" style="height:50px;"></div>
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+				</div>
+			</div>
+          </div>
+		</div>
+		<div class=""></div>
+	</div>
+</div>
+</div>
+    </div>
+    <div class="main-wrap">
+      <div id="wsite-content" class="wsite-elements wsite-not-footer">
+	<div class="wsite-section-wrap">
+	<div class="wsite-section wsite-body-section wsite-background-12"  >
+		<div class="wsite-section-content">
+          <div class="container">
+			<div class="wsite-section-elements">
+				<h2 class="wsite-content-title" style="text-align:center;"><font color="#2a2a2a" size="3">Welcome to Brisbane&nbsp;</font></h2>
+<h2 class="wsite-content-title" style="text-align:center;">What to Visit in Brisbane ?</h2>
+<div class="wsite-spacer" style="height:14px;"></div>
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -0px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:45.01687363238%; padding:0 0px;">
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="{% static 'img/paddle.jpg' %}" alt="Picture" style="width:283;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="wsite-spacer" style="height:10px;"></div>
+<div class="paragraph" style="text-align:center;"><font size="3"><strong>&nbsp;Top Places rated by Visitors !</strong></font></div>
+<div class="paragraph" style="text-align:center;">Put away the wine bottle and give your liver a rest with these 3 night activities that don&rsquo;t involve late night bar hopping. Kayak the Brisbane river by night, laugh yourself silly and maybe see a ghost or two as you discover Brisbane&rsquo;s true beauty in a bunch of Instagram-worthy activities.&nbsp;<br />&#8203;<br />This list proves that after the sun sets there is still plenty to do around Brisbane that doesn't involve being a bar fly.&nbsp;&#8203;</div>
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:10px;text-align:center">
+<a>
+<img src="{% static 'img/lights.jpg' %}" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="paragraph" style="text-align:center;"><span>1. Seasonal nights and City lights</span></div>
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="{% static 'img/stars.jpg' %}" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="paragraph" style="text-align:center;">2. Look at the Stars</div>
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="{% static 'img/rockclimb.jpg' %}" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="paragraph" style="text-align:center;">3. Climbing in the night</div>
+				</td>				<td class="wsite-multicol-col" style="width:10.452193647978%; padding:0 0px;">
+<div class="wsite-spacer" style="height:10px;"></div>
+				</td>				<td class="wsite-multicol-col" style="width:44.530932719643%; padding:0 0px;">
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="{% static 'img/picnic.jpg' %}" alt="Picture" style="width:430;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="wsite-spacer" style="height:10px;"></div>
+<div class="paragraph" style="text-align:center;"><font size="3"><strong>Best Rated Food places in Brisbane !</strong></font></div>
+<div class="paragraph" style="text-align:center;">Have you got fine-dining tastebuds and a student budget? You&rsquo;ve come to the right place &ndash; we&rsquo;re here to help you make the most of your dollar when dining out in Brisbane.<br /><br />&#8203;Read on to discover our pick of budget-friendly dining throughout Brisbane.<br /><br />Below shows the top 3 favourite places visited by tourists which we recommend for you</div>
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="{% static 'img/eat_street.jpg' %}" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="paragraph" style="text-align:center;">1. Eat Street</div>
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="{% static 'img/burgers.jpg' %}" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="paragraph" style="text-align:center;">2. Burger Places in City/ South Bank</div>
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:center">
+<a>
+<img src="{% static 'img/asian.jpg' %}" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="paragraph" style="text-align:center;">3. Asian Cuisines</div>
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+			</div>
+		</div>
+      </div>
+	</div>
+</div>
+<div class="wsite-section-wrap">
+	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-14" style="height: auto;background-color: transparent;background-image: none;is_customized: ;" >
+		<div class="wsite-section-content">
+          <div class="container">
+			<div class="wsite-section-elements">
+				<h2 class="wsite-content-title" style="text-align:center;"><font size="6">Brisbane Hotel Information</font></h2>
+<div class="wsite-spacer" style="height:10px;"></div>
+<div class="wsite-spacer" style="height:50px;"></div>
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:33.132530120482%; padding:0 15px;">
+<h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">Stamford Plaza</font></strong></h2>
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+<a><img src="{% static 'img/stamford_plaza.jpg' %}" alt="Picture" style="width:auto;max-width:100%" /></a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="paragraph" style="text-align:center;"><font size="3"><strong>Corner of Margaret Street, Brisbane</strong></font></div>
+<div class="paragraph" style="text-align:center;"><strong>Location:</strong> Located in Brisbane Central Business District, this luxury hotel is within a 10-minute walk of Brisbane Botanic Gardens, Eagle Street Pier, and Queen Street Mall. Museum of Brisbane is 0.5 mi (0.8 km) away.<br /><br /><strong>Hotel Features:</strong> This hotel features 3 restaurants, an outdoor pool, and a fitness center. Additionally, a bar/lounge, a spa tub, and a sauna are onsite.<br />&#8203;<br /><strong>Room Amenities:</strong> All 252 rooms feature thoughtful touches like bathrobes and slippers, plus 24-hour room service and plasma TVs with digital channels. Other amenities available to guests include WiFi, wired Internet, and minibars.</div>
+				</td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
+<h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">Marriott Hotel</font></strong></h2>
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+<a><img src="{% static 'img/marriott.jpg' %}" alt="Picture" style="width:302;max-width:100%" /></a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="paragraph" style="text-align:center;"><font size="3"><strong>515 Queen Street, Brisbane</strong></font></div>
+<div class="paragraph" style="text-align:left;"><strong>Centrally located:&nbsp;</strong>Conveniently located in the downtown Brisbane, just 1 Km from Queen Street Mall and 1 block from riverside bars &amp; dining, markets, art galleries, nightlife and the financial heart of Brisbane.<br /><br /><strong>Comprehensive business</strong>&nbsp;<strong>facilities: </strong>Specialising in business, corporate, social and wedding events with conference facilities and a full business center. Relaxation can be found by the pool or in the spa and sauna.<br />&#8203;<br /><strong>Premium bedding:&nbsp;</strong>Beds in the 263 luxurious guestrooms and 4 suites are topped with premium Marriott signature bedding; all guestrooms have city views. Innovative 'plug in and play&rsquo; technology, 32-inch LCD TV, and Marriott&rsquo;s own aromatherapy amenities.<br /><br />&#8203;</div>
+				</td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
+<h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">Treasury Brisbane</font></strong></h2>
+<div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+<a>
+<img src="{% static 'img/treasury.jpg' %}" alt="Picture" style="width:auto;max-width:100%" />
+</a>
+<div style="display:block;font-size:90%"></div>
+</div></div>
+<div class="paragraph" style="text-align:center;"><font size="3"><strong>130 William Street, Brisbane</strong></font></div>
+<div class="paragraph" style="text-align:center;"><strong>Location:&nbsp;</strong>Located in Brisbane Central Business District, this luxury hotel is steps from Treasury Casino and Commissariat Store Museum. Queen Street Mall and Museum of Brisbane are also within 10 minutes.<br /><br /><strong>Hotel Features:&nbsp;</strong>4 restaurants, a casino, and a nightclub are available at this hotel. WiFi in public areas is free. Other amenities include 4 bars/lounges, a fitness center, and a coffee shop/caf&eacute;.<br /><br />&#8203;<strong>Room Amenities:&nbsp;</strong>All 127 rooms offer free WiFi and free wired Internet, LCD TVs with cable channels, and comforts like pillowtop beds and premium bedding. Other amenities available to guests include iPod docks, 24-hour room service, and refrigerators.<br /><br />&#8203;</div>
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div class="wsite-spacer" style="height:31px;"></div>
+			</div>
+		</div>
+      </div>
+	</div>
+</div>
+</div>
+    </div>
+  </div><!-- /.wrapper -->
+</script>
+	</body>
+</html>

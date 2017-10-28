@@ -6,6 +6,7 @@ class Park(models.Model):
     address = models.TextField()
     phone = models.TextField()
     emailAddress = models.TextField()
+    image = models.ImageField(blank = True)
 
     def __str__(self):
         return self.name
@@ -15,6 +16,7 @@ class Zoo(models.Model):
     address = models.TextField()
     phone = models.TextField()
     emailAddress = models.TextField()
+    image = models.ImageField(blank=True)
 
     def __str__(self):
         return self.name
@@ -24,6 +26,7 @@ class Museum(models.Model):
     address = models.TextField()
     phone = models.TextField()
     emailAddress = models.TextField()
+    image = models.ImageField(blank=True)
 
     def __str__(self):
         return self.name
@@ -33,6 +36,7 @@ class Restaurant(models.Model):
     address = models.TextField()
     phone = models.TextField()
     emailAddress = models.TextField()
+    image = models.ImageField(blank=True)
 
     def __str__(self):
         return self.name
@@ -42,6 +46,7 @@ class Mall(models.Model):
     address = models.TextField()
     phone = models.TextField()
     emailAddress = models.TextField()
+    image = models.ImageField(blank=True)
 
     def __str__(self):
         return self.name
