@@ -61,11 +61,8 @@ class Hotel(models.Model):
     address = models.TextField()
     phone = models.TextField()
     emailAddress = models.TextField()
-<<<<<<< HEAD
     latitude = models.TextField(blank=True)
     longitude = models.TextField(blank=True)
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
 
     def __str__(self):
         return self.name
@@ -75,11 +72,8 @@ class Industry(models.Model):
     address = models.TextField()
     type = models.TextField()
     emailAddress = models.TextField()
-<<<<<<< HEAD
     latitude = models.TextField(blank=True)
     longitude = models.TextField(blank=True)
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
 
     def __str__(self):
         return self.name
@@ -89,11 +83,8 @@ class College(models.Model):
     address = models.TextField()
     departments = models.TextField()
     emailAddress = models.TextField()
-<<<<<<< HEAD
     latitude = models.TextField(blank=True)
     longitude = models.TextField(blank=True)
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
 
     def __str__(self):
         return self.name
@@ -103,11 +94,8 @@ class Library(models.Model):
     address = models.TextField()
     phone = models.TextField()
     emailAddress = models.TextField()
-<<<<<<< HEAD
     latitude = models.TextField(blank=True)
     longitude = models.TextField(blank=True)
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
 
     def __str__(self):
         return self.name
