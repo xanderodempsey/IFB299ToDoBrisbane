@@ -141,6 +141,165 @@
 
 
           <label class="hamburger"><span></span></label>
+<<<<<<< HEAD
+        </div>
+      </div>
+    </div>
+    <div class="banner-wrap">
+      <div class="wsite-elements wsite-not-footer wsite-header-elements">
+	<div class="wsite-section-wrap">
+	<div  class="wsite-section wsite-header-section wsite-section-bg-image wsite-section-effect-reveal" style="height: 660px;background-image: url({% static 'img/City-Chicago.jpg' %}) ;background-repeat: no-repeat ;background-position: undefined undefined ;background-size: 100% ;background-color: transparent ;background-size: cover;" >
+		<div class="wsite-section-content">
+          <div class="container">
+            <div class="banner">
+				<div class="wsite-section-elements">
+					<h2 class="wsite-content-title" style="text-align:center;">Business Page</h2>
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:96.441947565543%; padding:0 15px;">
+<div class="wsite-spacer" style="height:19px;"></div>
+				</td>				<td class="wsite-multicol-col" style="width:3.5580524344569%; padding:0 15px;">
+<div class="wsite-spacer" style="height:50px;"></div>
+				</td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+				</div>
+			</div>
+          </div>
+		</div>
+		<div class=""></div>
+	</div>
+</div>
+</div>
+    </div>
+
+<div class="wsite-section-wrap">
+	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-14" style="height: auto;background-color: transparent;background-image: none;is_customized: ;" >
+		<div class="wsite-section-content">
+          <div class="container">
+			<div class="wsite-section-elements">
+				<h2 class="wsite-content-title" style="text-align:center;"><font size="6">Industry</font></h2>
+                <a><center><img src="{% static 'img/industry.jpg' %}" alt="Picture" align="middle" style="width:auto;max-width:100%" /></center></a>
+<div class="wsite-spacer" style="height:10px;"></div>
+<div class="wsite-spacer" style="height:50px;"></div>
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:33.132530120482%; padding:0 15px;">
+
+                    {% for industry in industries %}
+                    <h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">{{industry.name}}</font></strong></h2>
+                    <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+                    <div style="display:block;font-size:90%"></div>
+                    </div></div>
+                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Address: {{industry.address|safe|linebreaks}}</strong></font></div>
+                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Industry Type: {{industry.type|safe|linebreaks}}</strong></font></div>
+                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Email Address: {{industry.emailAddress|safe|linebreaks}}</strong></font></div>
+                    <center><button onclick="initMap2( {{industry.latitude}}, {{industry.longitude}} )" name = 'submit'>View on map</button></center>
+
+                                    </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
+                    {% endfor %}
+
+                </td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+<div class="wsite-section-wrap">
+	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-14" style="height: auto;background-color: transparent;background-image: none;is_customized: ;" >
+		<div class="wsite-section-content">
+          <div class="container">
+			<div class="wsite-section-elements">
+				<h2 class="wsite-content-title" style="text-align:center;"><font size="6">Hotels</font></h2>
+                <a><center><img src="{% static 'img/hotel.jpg' %}" alt="Picture" align="middle" style="width:auto;max-width:100%" /></center></a>
+<div class="wsite-spacer" style="height:10px;"></div>
+<div class="wsite-spacer" style="height:50px;"></div>
+<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+	<table class="wsite-multicol-table">
+		<tbody class="wsite-multicol-tbody">
+			<tr class="wsite-multicol-tr">
+				<td class="wsite-multicol-col" style="width:33.132530120482%; padding:0 15px;">
+                    {% for hotel in hotels %}
+                    <h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">{{hotel.name}}</font></strong></h2>
+                    <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+                    <div style="display:block;font-size:90%"></div>
+                    </div></div>
+                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Address: {{hotel.address|safe|linebreaks}}</strong></font></div>
+                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Phone: {{hotel.phone|safe|linebreaks}}</strong></font></div>
+                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Email Address: {{hotel.emailAddress|safe|linebreaks}}</strong></font></div>
+                    <center><button onclick="initMap2( {{hotel.latitude}}, {{hotel.longitude}} )" name = 'submit'>View on map</button></center>
+
+                                    </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
+                    {% endfor %}
+
+                </td>			</tr>
+		</tbody>
+	</table>
+</div></div></div>
+
+
+                <!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Map</h3>
+    <div id="map"></div>
+    <script>
+     function initMap2(lati, long) {
+        var location = {lat: lati, lng: long};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: location
+        });
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+         document.getElementID('map').scrollIntoView();
+
+      }
+
+
+      function initMap() {
+        var Brisbane = {lat:  -27.470125, lng: 153.021072};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: Brisbane
+        });
+        var marker = new google.maps.Marker({
+          position: Brisbane,
+          map: map
+        });
+      }
+
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5iyuW9AcD9XEAAnzRpH_Kvaa65_NKQIw&callback=initMap">
+    </script>
+  </body>
+</html>
+
+
+
+                <footer>
+        <div class="container-fluid" style='margin-left:15px'>
+            <p><a href="/users/student/" target="blank"><font size="5">Student</a> | <a href="/users/tourist/"
+                                                                                        target="blank">Tourist</a></font>
+            </p>
+=======
+>>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
         </div>
       </div>
     </div>
@@ -237,6 +396,10 @@
 	</table>
 </div></div></div>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
 <div class="wsite-spacer" style="height:31px;"></div>
 			</div>
 		</div>
