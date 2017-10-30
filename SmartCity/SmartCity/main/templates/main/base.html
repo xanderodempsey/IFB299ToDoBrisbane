@@ -48,7 +48,10 @@
 
                     <div class="well bs-sidebar" id="sidebar" style="background-color:#fff">
                         <ul class="nav nav-pills nav-stacked col-md-3">
-                            <li><a href='/'>Home</a></li>
+                            {% if user.user_type == 1 %}
+                                <!--<li><a href='/'>Home</a></li> -->
+                                <li><a href='/users/business/'>Home</a></li>
+                            {% endif %}
                             <li><a href='{% url 'users:logout' %}'>SignOut</a></li>
                             <li><a href='{% url 'CityInformation:InfoList' %}'>City Information</a></li>
                             <li><a href='/faq/'>FAQ</a></li>
