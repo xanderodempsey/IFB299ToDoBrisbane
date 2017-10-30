@@ -92,9 +92,28 @@
 
 
                   <div class="nav desktop-nav"><ul class="wsite-menu-default">
-                    <li id="active" class="wsite-menu-item-wrap">
-                        <a href="{% url 'main:index' %}" class="wsite-menu-item">Home</a>
-                    </li>
+                    {% if user.userprofile.user_type == '1' %}
+                        <li id="active" class="wsite-menu-item-wrap">
+                            <a href='/users/business/' class="wsite-menu-item">Home</a>
+                        </li>
+                    {% else %}
+                        {% if user.userprofile.user_type == '2' %}
+                            <li id="active" class="wsite-menu-item-wrap">
+                                <a href='/users/student/' class="wsite-menu-item">Home</a>
+                            </li>
+                        {% else %}
+                            {% if user.userprofile.user_type == '3' %}
+                                <li id="active" class="wsite-menu-item-wrap">
+                                    <a href='/users/tourist/' class="wsite-menu-item">Home</a>
+                                </li>
+                            {% else %}
+                                <li id="active" class="wsite-menu-item-wrap">
+                                    <a href="{% url 'main:index' %}" class="wsite-menu-item">Home</a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+
                     <li id="pg595672417440186405" class="wsite-menu-item-wrap">
                         <a href="/contact/" class="wsite-menu-item">Contact</a>
 
