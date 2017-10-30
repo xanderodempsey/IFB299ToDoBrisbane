@@ -25,41 +25,6 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('main:index'))
 
-##TEST
-# def register(request):
-#     '''Register new user'''
-#     if request.method != 'POST':
-#         # Display a blank registration form
-#         form = RegisterForm(request.POST)
-#
-#         user_form = UserCreationForm(request.POST, instance=request.user)
-#         UserProfile_form = RegisterForm(request.POST, instance=request.user)
-#     else:
-#         # Process a complete form
-#         form = RegisterForm(data=request.POST)
-#
-#         user_form = UserCreationForm(request.POST, instance=request.user)
-#         UserProfile_form = RegisterForm(request.POST, instance=request.user)
-#
-#
-#
-#         if form.is_valid() & RegisterForm.is_valid():
-#             new_user = user_form.save()
-#             UserProfile_form.save()
-#
-#          ###   new_user = form.save()
-#             # Log in and redirect to home page
-#             authenticated_user = authenticate(username=new_user.username, password = request.POST['password1'])
-#             login(request, authenticated_user)
-#
-# #        if user_type == 'Business':
-# #            return HttpResponseRedirect(reverse('main:business'))
-# #        if user_type == 'Student':
-# #            return HttpResponseRedirect(reverse('main:business'))
-#
-# #        else:
-#         return HttpResponseRedirect(reverse('main:index'))
-##ENDTEST
 
 
 
@@ -106,29 +71,6 @@ def register(request):
 #    return HttpResponseRedirect(reverse('main:index'))
 
 
-#def login(request):
-#    if request.method == 'POST':
-#        form = AuthenticationForm(request, data=request.POST)
-#        if form.is_valid():
-#            username = form.cleaned_data.get('username')
-#            password = form.cleaned_data.get('password')
-#            user_group = profile.user_type
-#            user = authenticate(username=username, password=password)
-#            login(request, user)
-#            if user_group == '1':
-#                return render(request, 'users/business.html')
-#            elif user_group == '2':
-#                return render(request, 'users/student.html')
-#            elif user_group == '3':
-#                return render(request, 'users/tourist.html')
-#            else:
-#                return redirect('main:index')
-#    else:
-#        form = AuthenticationForm(request)
-#    return render(request, 'login/login.html', {'form': form})
-
-
-
 
 
 def log_in(request):
@@ -144,7 +86,6 @@ def log_in(request):
 
             form.clean()
             login(request, form.user_cache)
-
 
 
             if user_group == '1':
