@@ -82,9 +82,28 @@
 
 
                   <div class="nav desktop-nav"><ul class="wsite-menu-default">
-                    <li id="active" class="wsite-menu-item-wrap">
-                        <a href="{% url 'main:index' %}" class="wsite-menu-item">Home</a>
-                    </li>
+                    {% if user.userprofile.user_type == '1' %}
+                        <li id="active" class="wsite-menu-item-wrap">
+                            <a href='/users/business/' class="wsite-menu-item">Home</a>
+                        </li>
+                    {% else %}
+                        {% if user.userprofile.user_type == '2' %}
+                            <li id="active" class="wsite-menu-item-wrap">
+                                <a href='/users/student/' class="wsite-menu-item">Home</a>
+                            </li>
+                        {% else %}
+                            {% if user.userprofile.user_type == '3' %}
+                                <li id="active" class="wsite-menu-item-wrap">
+                                    <a href='/users/tourist/' class="wsite-menu-item">Home</a>
+                                </li>
+                            {% else %}
+                                <li id="active" class="wsite-menu-item-wrap">
+                                    <a href="{% url 'main:index' %}" class="wsite-menu-item">Home</a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+
                     <li id="pg595672417440186405" class="wsite-menu-item-wrap">
                         <a href="/contact/" class="wsite-menu-item">Contact</a>
 
@@ -189,10 +208,7 @@
 		<tbody class="wsite-multicol-tbody">
 			<tr class="wsite-multicol-tr">
 				<td class="wsite-multicol-col" style="width:33.132530120482%; padding:0 15px;">
-<<<<<<< HEAD
 
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
                     {% for mall in malls %}
                     <h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">{{mall.name}}</font></strong></h2>
                     <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
@@ -201,7 +217,6 @@
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Address: {{mall.address|safe|linebreaks}}</strong></font></div>
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Phone: {{mall.phone|safe|linebreaks}}</strong></font></div>
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Email Address: {{mall.emailAddress|safe|linebreaks}}</strong></font></div>
-<<<<<<< HEAD
                     <center><button onclick="initMap2( {{mall.latitude}}, {{mall.longitude}} )" name = 'submit'>View on map</button></center>
 
                     </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
@@ -213,12 +228,6 @@
 
 
 
-=======
-
-                                    </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
-                    {% endfor %}
-
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
                 </td>			</tr>
 		</tbody>
 	</table>
@@ -238,10 +247,7 @@
 		<tbody class="wsite-multicol-tbody">
 			<tr class="wsite-multicol-tr">
 				<td class="wsite-multicol-col" style="width:33.132530120482%; padding:0 15px;">
-<<<<<<< HEAD
 
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
                     {% for museum in museums %}
                     <h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">{{museum.name}}</font></strong></h2>
                     <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
@@ -250,7 +256,6 @@
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Address: {{museum.address|safe|linebreaks}}</strong></font></div>
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Phone: {{museum.phone|safe|linebreaks}}</strong></font></div>
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Email Address: {{museum.emailAddress|safe|linebreaks}}</strong></font></div>
-<<<<<<< HEAD
                     <center><button onclick="initMap2( {{museum.latitude}}, {{museum.longitude}} )" name = 'submit'>View on map</button></center>
 
                      </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
@@ -262,12 +267,6 @@
 
 
 
-=======
-
-                                    </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
-                    {% endfor %}
-
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
                 </td>			</tr>
 		</tbody>
 	</table>
@@ -287,10 +286,7 @@
 		<tbody class="wsite-multicol-tbody">
 			<tr class="wsite-multicol-tr">
 				<td class="wsite-multicol-col" style="width:33.132530120482%; padding:0 15px;">
-<<<<<<< HEAD
 
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
                     {% for park in parks %}
                     <h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">{{park.name}}</font></strong></h2>
                     <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
@@ -299,10 +295,7 @@
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Address: {{park.address|safe|linebreaks}}</strong></font></div>
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Phone: {{park.phone|safe|linebreaks}}</strong></font></div>
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Email Address: {{park.emailAddress|safe|linebreaks}}</strong></font></div>
-<<<<<<< HEAD
                     <center><button onclick="initMap2( {{park.latitude}}, {{park.longitude}} )" name = 'submit'>View on map</button></center>
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
 
                                     </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
                     {% endfor %}
@@ -334,10 +327,7 @@
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Address: {{restaurant.address|safe|linebreaks}}</strong></font></div>
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Phone: {{restaurant.phone|safe|linebreaks}}</strong></font></div>
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Email Address: {{restaurant.emailAddress|safe|linebreaks}}</strong></font></div>
-<<<<<<< HEAD
                     <center><button onclick="initMap2( {{restaurant.latitude}}, {{restaurant.longitude}} )" name = 'submit'>View on map</button></center>
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
 
                                     </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
                     {% endfor %}
@@ -369,10 +359,7 @@
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Address: {{zoo.address|safe|linebreaks}}</strong></font></div>
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Phone: {{zoo.phone|safe|linebreaks}}</strong></font></div>
                     <div class="paragraph" style="text-align:center;"><font size="3"><strong>Email Address: {{zoo.emailAddress|safe|linebreaks}}</strong></font></div>
-<<<<<<< HEAD
-                    <center><button onclick="initMap2( {{zoo.latitude}}, {{zoo.longitude}} ).scrollIntoView();" name = 'submit'>View on map</button></center>
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
+                    <center><button onclick="initMap2( {{zoo.latitude}}, {{zoo.longitude}} )" name = 'submit'>View on map</button></center>
 
                                     </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
                     {% endfor %}
@@ -392,7 +379,6 @@
     </div>
   </div><!-- /.wrapper -->
 </script>
-<<<<<<< HEAD
 
 
 
@@ -422,9 +408,7 @@
           position: location,
           map: map
         });
-
-        document.getElementID('map').scrollIntoView();
-
+        document.getElementById('map').scrollIntoView();
       }
 
 
@@ -456,7 +440,3 @@
 
 	</body>
 </html>
-=======
-	</body>
-</html>
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
