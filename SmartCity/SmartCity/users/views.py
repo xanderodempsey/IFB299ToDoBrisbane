@@ -15,18 +15,8 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import *
 
-
-
-
-
-
-
-
-
-
-
-
-
+from django.views.generic import ListView
+from CityInformation.models import *
 
 
 # Create your views here.
@@ -189,3 +179,36 @@ def student_view(request):
 
 def tourist_view(request):
     return render(request, 'users/tourist.html')
+
+class StudentList(ListView):
+    context_object_name = 'city_info_list'
+    template_name = 'users/student.html'
+    queryset = College.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(StudentList, self).get_context_data(**kwargs)
+        context['colleges'] = self.queryset
+        context['libraries'] = Library.objects.all()
+        return context
+
+class BusinessList(ListView):
+    context_object_name = 'city_info_list'
+    template_name = 'users/business.html'
+    queryset = Hotel.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(BusinessList, self).get_context_data(**kwargs)
+        context['hotels'] = self.queryset
+        context['industries'] = Industry.objects.all()
+        return context
+
+
+class TouristList(ListView):
+    context_object_name = 'city_info_list'
+    template_name = 'users/tourist.html'
+    queryset = Hotel.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(TouristList, self).get_context_data(**kwargs)
+        context['hotels'] = self.queryset
+        return context
