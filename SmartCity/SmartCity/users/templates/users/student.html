@@ -83,7 +83,7 @@
 
                   <div class="nav desktop-nav"><ul class="wsite-menu-default">
                     <li id="active" class="wsite-menu-item-wrap">
-                        <a href="{% url 'main:index' %}" class="wsite-menu-item">Home</a>
+                        <a href='/users/student/' class="wsite-menu-item">Home</a>
                     </li>
                     <li id="pg595672417440186405" class="wsite-menu-item-wrap">
                         <a href="/contact/" class="wsite-menu-item">Contact</a>
@@ -141,7 +141,6 @@
 
 
           <label class="hamburger"><span></span></label>
-<<<<<<< HEAD
         </div>
       </div>
     </div>
@@ -260,7 +259,7 @@
     <script>
      function initMap2(lati, long) {
         var location = {lat: lati, lng: long};
-        var map = new google.maps.Map(document.getElementById('map').scrollIntoView(), {
+        var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
           center: location
         });
@@ -268,8 +267,7 @@
           position: location,
           map: map
         });
-         document.getElementID('map').scrollIntoView();
-
+        document.getElementById('map').scrollIntoView();
       }
 
 
@@ -300,111 +298,13 @@
             <p><a href="/users/business/" target="blank"><font size="5">Business</a> | <a href="/users/tourist/"
                                                                                           target="blank">Tourist</a></font>
             </p>
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
         </div>
-      </div>
-    </div>
-    <div class="banner-wrap">
-      <div class="wsite-elements wsite-not-footer wsite-header-elements">
-	<div class="wsite-section-wrap">
-	<div  class="wsite-section wsite-header-section wsite-section-bg-image wsite-section-effect-reveal" style="height: 660px;background-image: url({% static 'img/City-Chicago.jpg' %}) ;background-repeat: no-repeat ;background-position: undefined undefined ;background-size: 100% ;background-color: transparent ;background-size: cover;" >
-		<div class="wsite-section-content">
-          <div class="container">
-            <div class="banner">
-				<div class="wsite-section-elements">
-					<h2 class="wsite-content-title" style="text-align:center;">Student Page</h2>
-<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:96.441947565543%; padding:0 15px;">
-<div class="wsite-spacer" style="height:19px;"></div>
-				</td>				<td class="wsite-multicol-col" style="width:3.5580524344569%; padding:0 15px;">
-<div class="wsite-spacer" style="height:50px;"></div>
-				</td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
-				</div>
-			</div>
-          </div>
-		</div>
-		<div class=""></div>
-	</div>
-</div>
-</div>
-    </div>
-
-<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-14" style="height: auto;background-color: transparent;background-image: none;is_customized: ;" >
-		<div class="wsite-section-content">
-          <div class="container">
-			<div class="wsite-section-elements">
-				<h2 class="wsite-content-title" style="text-align:center;"><font size="6">Colleges</font></h2>
-                <a><center><img src="{% static 'img/college.jpg' %}" alt="Picture" align="middle" style="width:auto;max-width:100%" /></center></a>
-<div class="wsite-spacer" style="height:10px;"></div>
-<div class="wsite-spacer" style="height:50px;"></div>
-<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:33.132530120482%; padding:0 15px;">
-                    {% for college in colleges %}
-                    <h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">{{college.name}}</font></strong></h2>
-                    <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
-                    <div style="display:block;font-size:90%"></div>
-                    </div></div>
-                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Address: {{college.address|safe|linebreaks}}</strong></font></div>
-                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Departments: {{college.departments|safe|linebreaks}}</strong></font></div>
-                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Email Address: {{college.emailAddress|safe|linebreaks}}</strong></font></div>
-
-                                    </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
-                    {% endfor %}
-
-                </td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
-
-<div class="wsite-section-wrap">
-	<div class="wsite-section wsite-body-section wsite-section-bg-color wsite-background-14" style="height: auto;background-color: transparent;background-image: none;is_customized: ;" >
-		<div class="wsite-section-content">
-          <div class="container">
-			<div class="wsite-section-elements">
-				<h2 class="wsite-content-title" style="text-align:center;"><font size="6">Libraries</font></h2>
-                <a><center><img src="{% static 'img/library1.jpg' %}" alt="Picture" align="middle" style="width:auto;max-width:100%" /></center></a>
-<div class="wsite-spacer" style="height:10px;"></div>
-<div class="wsite-spacer" style="height:50px;"></div>
-<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
-	<table class="wsite-multicol-table">
-		<tbody class="wsite-multicol-tbody">
-			<tr class="wsite-multicol-tr">
-				<td class="wsite-multicol-col" style="width:33.132530120482%; padding:0 15px;">
-                    {% for library in libraries %}
-                    <h2 class="wsite-content-title" style="text-align:center;"><strong><font size="5">{{library.name}}</font></strong></h2>
-                    <div><div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
-                    <div style="display:block;font-size:90%"></div>
-                    </div></div>
-                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Address: {{library.address|safe|linebreaks}}</strong></font></div>
-                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Phone: {{library.phone|safe|linebreaks}}</strong></font></div>
-                    <div class="paragraph" style="text-align:center;"><font size="3"><strong>Email Address: {{library.emailAddress|safe|linebreaks}}</strong></font></div>
-
-                                    </td>				<td class="wsite-multicol-col" style="width:33.433734939759%; padding:0 15px;">
-                    {% endfor %}
-
-                </td>			</tr>
-		</tbody>
-	</table>
-</div></div></div>
-
-<<<<<<< HEAD
+    </footer>
 
 
 
 
-=======
->>>>>>> 29b2cd2a4521e25f740a54efbcbf7fa49555177a
+
 <div class="wsite-spacer" style="height:31px;"></div>
 			</div>
 		</div>
