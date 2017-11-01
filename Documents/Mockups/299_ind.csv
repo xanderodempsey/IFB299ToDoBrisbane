@@ -1,7 +1,0 @@
-﻿ID,CITY_ID,BUSINESS_NAME,INDUSTRY_TYPE,STREET,SUBURB,POSTCODE,EMAIL,PHONE_NUMBER
-1,1,SAP,1,20/140 Creek Street,Brisbane,4000,dummy.email@sap.com,3000 0001
-2,1,Oracle,1,340 Adelaide Street,Brisbane,4000,contact@oracle.com,3000 0002
-3,1,Rio Tinto,2,123 Albert Street,Brisbane,4000,contact@riotinto.com,3001 0000
-4,1,Santos,2,32 Turbot Street,Brisbane,4000,contact@santos.com.au,3838 3000
-5,1,DHL,3,171 Roma Street,Brisbane,4000,contact@dhl.com.au,13 14 06
-6,1,Toll,3,16 Terrace Place,Murrarie,4000,contact@toll.com.au,13 14 15
